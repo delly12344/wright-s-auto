@@ -1,0 +1,87 @@
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        /* Logo Area */
+        .logo-container {
+            background: #f8f8f8;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+        }
+        .logo-container h1 {
+            color: #333;
+            font-size: 2rem;
+        }
+        /* Navigation Bar */
+        nav {
+            background: #333;
+            padding: 15px 0;
+        }
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        .nav-links a:hover {
+            background-color: #555;
+        }
+        .nav-links a.active {
+            background-color: #007bff;
+        }
+        
+        /* Main Content Area */
+        .main-content {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+            min-height: 500px;
+        }
+
+        /* About Us Specific Styles */
+        .about-section {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .about-section h1 {
+            color: #333;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #007bff;
+        }
+        .contact-info {
+            background-color: #f8f8f8;
+            padding: 20px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .contact-info p {
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+        .contact-info a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .contact-info a:hover {
+            text-decoration: underline;
+        }

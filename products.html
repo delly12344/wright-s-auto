@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="productsStyle.css">
+    <title>Products Page</title>
+</head>
+<body>
+    <!-- Logo Area -->
+    <div class="logo-container">
+        <center><img src="https://i.imgur.com/rrIBhpn.jpeg" alt="reading picture" height="200" width="180"></center>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="nav-container">
+            <div class="nav-links">
+                <a href="products.html" class="active">Products</a>
+                <a href="invoice.html">Invoice</a>
+                <a href="aboutUS.html">About Us</a>
+            </div>
+            <div class="cart-icon" id="cartCounter" onclick="toggleCartModal()">
+                🛒 Cart (0)
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <div class="main-content">
+        <div class="products-grid">
+            <!-- Product 1 -->
+            <div class="product-card">
+                <img src="https://i.imgur.com/fJpHdeG.jpeg" alt="Product 1">
+                <h3 class="product-title">GLE53 AMG Coupe Front Bumper Assembly</h3>
+                <p class="product-description">Genuine Mercedes AMG Front bumper Assembly for 2020 - 2023 models</p>
+                <p class="product-price">$ 29999.99</p>
+                <div class="quantity-selector">
+                    <button onclick="decreaseQuantity(0)">-</button>
+                    <input type="number" value="1" min="1" id="quantity0">
+                    <button onclick="increaseQuantity(0)">+</button>
+                </div>
+                <button class="add-to-cart-btn" onclick="addToCart(0)">Add to Cart</button>
+            </div>
+            <!-- Product 2 -->
+            <div class="product-card">
+                <img src="https://i.imgur.com/L5sj7gA.jpeg" alt="Product 2">
+                <h3 class="product-title">GLE63 AMG Coupe Rear Bumper/Diffuser Assembly</h3>
+                <p class="product-description">Genuine Mercedes AMG Rear bumper Assembly for 2020 - 2023 models</p>
+                <p class="product-price">$25000.00</p>
+                <div class="quantity-selector">
+                    <button onclick="decreaseQuantity(1)">-</button>
+                    <input type="number" value="1" min="1" id="quantity1">
+                    <button onclick="increaseQuantity(1)">+</button>
+                </div>
+                <button class="add-to-cart-btn" onclick="addToCart(1)">Add to Cart</button>
+            </div>
+            <!-- Product 3 (New) -->
+            <div class="product-card">
+                <img src="https://i.imgur.com/4O5hDO3.jpeg" alt="Product 3">
+                <h3 class="product-title">BMW 330i altenator</h3>
+                <p class="product-description">Altenator for 2017-2018 BMW 330i xDrive 2.0L models</p>
+                <p class="product-price">$50000.00</p>
+                <div class="quantity-selector">
+                    <button onclick="decreaseQuantity(2)">-</button>
+                    <input type="number" value="1" min="1" id="quantity2">
+                    <button onclick="increaseQuantity(2)">+</button>
+                </div>
+                <button class="add-to-cart-btn" onclick="addToCart(2)">Add to Cart</button>
+            </div>
+            <!-- Product 4 (New) -->
+            <div class="product-card">
+                <img src="https://i.imgur.com/3xbJe7h.png" alt="Product 4">
+                <h3 class="product-title">Toyota Harrier 240G Tail Gate (Black)</h3>
+                <p class="product-description">Tail Gate for 2010-2012 Toyota Harrier models</p>
+                <p class="product-price">$45999.99</p>
+                <div class="quantity-selector">
+                    <button onclick="decreaseQuantity(3)">-</button>
+                    <input type="number" value="1" min="1" id="quantity3">
+                    <button onclick="increaseQuantity(3)">+</button>
+                </div>
+				 <button class="add-to-cart-btn" onclick="addToCart(3)">Add to Cart</button>
+			</div> <!-- Corrected closing tag for Product 4 -->
+
+				
+				
+				
+            <div class="product-card">
+			   <img src="https://i.imgur.com/YlyI1QQ.jpeg" alt="Product 5">
+               <h3 class="product-title">Honda Civic Type R Brake Kit</h3>
+               <p class="product-description">Brembo GT brake kit (FRONT) for 2017-2022+ Honda Civic Type R FK8/FL5 models</p>
+               <p class="product-price">$189000.00</p>
+               <div class="quantity-selector">
+                   <button onclick="decreaseQuantity(4)">-</button>
+                   <input type="number" value="1" min="1" id="quantity4">
+                   <button onclick="increaseQuantity(4)">+</button>
+               </div>
+            <button class="add-to-cart-btn" onclick="addToCart(4)">Add to Cart</button>
+        </div>
+
+        <!-- Product 6 -->
+        <div class="product-card">
+            <img src="https://i.imgur.com/pn2aVMP.jpeg" alt="Product 6">
+            <h3 class="product-title">Audi RS5 Right Side Mirror Assembly</h3>
+            <p class="product-description">OEM White Right Passenger Side Mirror with Lane Assist Compatible with Audi RS5,S5 and A5 Quattro Sportback 2018-2023 models</p>
+            <p class="product-price">$75000.00</p>
+            <div class="quantity-selector">
+                <button onclick="decreaseQuantity(5)">-</button>
+                <input type="number" value="1" min="1" id="quantity5">
+                <button onclick="increaseQuantity(5)">+</button>
+            </div>
+            <button class="add-to-cart-btn" onclick="addToCart(5)">Add to Cart</button>
+        </div>
+
+        <!-- Product 7 -->
+        <div class="product-card">
+            <img src="https://i.imgur.com/eiRLuzZ.jpeg" alt="Product 7">
+            <h3 class="product-title">Lexus IS300/IS350 F-Sport Hood</h3>
+            <p class="product-description">Carbon Fiber Hood for 2021-2023 Lexus IS300/IS350 F-Sport models</p>
+            <p class="product-price">$130000.00</p>
+            <div class="quantity-selector">
+                <button onclick="decreaseQuantity(6)">-</button>
+                <input type="number" value="1" min="1" id="quantity6">
+                <button onclick="increaseQuantity(6)">+</button>
+            </div>
+            <button class="add-to-cart-btn" onclick="addToCart(6)">Add to Cart</button>
+        </div>
+
+        <!-- Product 8 -->
+        <div class="product-card">
+            <img src="https://i.imgur.com/kTzV10Z.jpeg" alt="Product 8">
+            <h3 class="product-title">Porsche 991.1 Turbo/991.1 (911) GT3 Bi-Xenon headlights (Blacked out)  </h3>
+            <p class="product-description">Bi-Xenon headlights (Blacked out), Porsche Dynamic Light System (PDLS) for  2016 Porsche 991.1 (911) Turbo and 2016 Porsche 991.1 (911) GT3 models. </p>
+            <p class="product-price">$959999.99</p>
+            <div class="quantity-selector">
+                <button onclick="decreaseQuantity(7)">-</button>
+                <input type="number" value="1" min="1" id="quantity7">
+                <button onclick="increaseQuantity(7)">+</button>
+            </div>
+            <button class="add-to-cart-btn" onclick="addToCart(7)">Add to Cart</button>
+        </div>
+		
+		<div class="product-card">
+		    <img src="https://i.imgur.com/Y901frQ.jpeg" alt="Product 8">
+            <h3 class="product-title">Ferrari 812 superfast complete engine v12 6,5l </h3>
+            <p class="product-description">Complete 6.5 liter v12 engine for the ferrari 812 superfast/F12berlinetta.This engine capable of generating a power output of 789 hp at 8,500 rpm and 718 Nm (530 lb⋅ft) of torque at 7,000 rpm. </p>
+            <p class="product-price">$350000.00</p>
+            <div class="quantity-selector">
+                <button onclick="decreaseQuantity(8)">-</button>
+                <input type="number" value="1" min="1" id="quantity8">
+                <button onclick="increaseQuantity(8)">+</button>
+            </div>
+            <button class="add-to-cart-btn" onclick="addToCart(8)">Add to Cart</button>
+        </div>
+		
+		
+		
+    </div>
+</div>
+
+    <!-- Cart Modal -->
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-modal-content">
+            <div class="cart-modal-header">
+                <h2>Cart Contents</h2>
+                <button class="close-btn" onclick="toggleCartModal()">Close</button>
+            </div>
+            <div class="cart-items" id="cartItems"></div>
+        </div>
+    </div>
+
+    <!-- Checkout Section -->
+    <div class="checkout-section">
+        <div>
+            <button class="exit-btn" onclick="exitStore()">Exit</button>
+            <button class="cancel-btn" onclick="cancelOrder()">Cancel</button>
+        </div>
+        <button class="checkout-btn" onclick="checkout()">Checkout</button>
+    </div>
+<br><br>
+    <script>
+        // Store product data
+        const products = [
+    {
+        id: 0,
+        name: "GLE53 AMG Coupe Front Bumper Assembly",
+        price: 29999.99,
+        quantity: 0
+    },
+    {
+        id: 1,
+        name: "GLE63 AMG Coupe Rear Bumper Assembly",
+        price: 25000.00,
+        quantity: 0
+    },
+    {
+        id: 2,
+        name: "BMW 330i altenator",
+        price: 50000.00,
+        quantity: 0
+    },
+    {
+        id: 3,
+        name: "Toyota Harrier 240G Tail Gate (Black)",
+        price: 45999.99,
+        quantity: 0
+    },
+    {
+        id: 4,
+        name: "Honda Civic Type R Brake Kit",
+        price:189000.00,
+        quantity: 0
+    },
+    {
+        id: 5,
+        name: "Audi RS5 Side Mirror Assembly",
+        price: 75000.00,
+        quantity: 0
+    },
+    {
+        id: 6,
+        name: "Lexus IS350 F-Sport Hood",
+        price: 130000.00,
+        quantity: 0
+    },
+    {
+        id: 7,
+        name: "Porsche 991.1 Turbo/991.1 (911) GT3 Bi-Xenon headlights (Blacked out)",
+        price: 959999.99,
+        quantity: 0
+    },
+	{
+	    id: 8,
+        name: "Ferrari 812 superfast complete engine v12 6,5l",
+        price: 350000.00,
+        quantity: 0
+    },
+	
+	
+];
+
+        let cartItems = [];
+        let cartTotal = 0;
+
+        function updateCartDisplay() {
+            const cartCounter = document.getElementById('cartCounter');
+            const totalItems = cartItems.reduce((sum, item) => sum + item.quantity, 0);
+            cartCounter.textContent = `🛒 Cart (${totalItems})`;
+        }
+
+        function toggleCartModal() {
+            const modal = document.getElementById('cartModal');
+            modal.style.display = modal.style.display === 'flex' ? 'none' : 'flex';
+            if (modal.style.display === 'flex') displayCartItems();
+        }
+
+        function displayCartItems() {
+            const cartItemsContainer = document.getElementById('cartItems');
+            cartItemsContainer.innerHTML = ''; // Clear previous items
+
+            if (cartItems.length === 0) {
+                cartItemsContainer.innerHTML = '<p>Your cart is empty!</p>';
+                return;
+            }
+
+            let subtotal = 0;
+            cartItems.forEach(item => {
+                const itemTotal = item.price * item.quantity;
+                subtotal += itemTotal;
+
+                const cartItem = document.createElement('div');
+                cartItem.classList.add('cart-item');
+                cartItem.innerHTML = `
+                    <p>${item.name} (x${item.quantity})</p>
+                    <p>$${itemTotal.toFixed(2)}</p>
+                `;
+                cartItemsContainer.appendChild(cartItem);
+            });
+
+            const tax = subtotal * 0.15;
+            const total = subtotal + tax;
+            cartItemsContainer.innerHTML += `
+                <hr>
+                <p><strong>Subtotal:</strong> $${subtotal.toFixed(2)}</p>
+                <p><strong>Tax (15%):</strong> $${tax.toFixed(2)}</p>
+                <p><strong>Total:</strong> $${total.toFixed(2)}</p>
+            `;
+        }
+
+        function addToCart(productId) {
+            const quantity = parseInt(document.getElementById(`quantity${productId}`).value);
+            const product = products[productId];
+            
+            const existingItemIndex = cartItems.findIndex(item => item.id === productId);
+            
+            if (existingItemIndex !== -1) {
+                cartItems[existingItemIndex].quantity += quantity;
+            } else {
+                cartItems.push({
+                    ...product,
+                    quantity: quantity
+                });
+            }
+
+            updateCartDisplay();
+            alert(`Added ${quantity} ${product.name}(s) to cart`);
+        }
+
+        function increaseQuantity(productId) {
+            const quantityInput = document.getElementById(`quantity${productId}`);
+            quantityInput.value = parseInt(quantityInput.value) + 1;
+        }
+
+        function decreaseQuantity(productId) {
+            const quantityInput = document.getElementById(`quantity${productId}`);
+            if (quantityInput.value > 1) {
+                quantityInput.value = parseInt(quantityInput.value) - 1;
+            }
+        }
+
+        function increaseQuantity(productId) {
+            const quantityInput = document.getElementById(`quantity${productId}`);
+            quantityInput.value = parseInt(quantityInput.value) + 1;
+        }
+
+        function addToCart(productId) {
+            const quantity = parseInt(document.getElementById(`quantity${productId}`).value);
+            const product = products[productId];
+            
+            const existingItemIndex = cartItems.findIndex(item => item.id === productId);
+            
+            if (existingItemIndex !== -1) {
+                cartItems[existingItemIndex].quantity += quantity;
+            } else {
+                cartItems.push({
+                    ...product,
+                    quantity: quantity
+                });
+            }
+
+            updateCartDisplay();
+            alert(`Added ${quantity} ${product.name}(s) to cart`);
+        }
+
+        function updateCartDisplay() {
+            const cartCounter = document.getElementById('cartCounter');
+            const totalItems = cartItems.reduce((sum, item) => sum + item.quantity, 0);
+            cartCounter.textContent = `🛒 Cart (${totalItems})`;
+        }
+
+        function toggleCartModal() {
+            const modal = document.getElementById('cartModal');
+            modal.style.display = modal.style.display === 'flex' ? 'none' : 'flex';
+            if (modal.style.display === 'flex') displayCartItems();
+        }
+
+        function displayCartItems() {
+            const cartItemsContainer = document.getElementById('cartItems');
+            cartItemsContainer.innerHTML = ''; // Clear previous items
+
+            if (cartItems.length === 0) {
+                cartItemsContainer.innerHTML = '<p>Your cart is empty!</p>';
+                return;
+            }
+
+            let subtotal = 0;
+            cartItems.forEach(item => {
+                const itemTotal = item.price * item.quantity;
+                subtotal += itemTotal;
+
+                const cartItem = document.createElement('div');
+                cartItem.classList.add('cart-item');
+                cartItem.innerHTML = `
+                    <p>${item.name} (x${item.quantity})</p>
+                    <p>$${itemTotal.toFixed(2)}</p>
+                `;
+                cartItemsContainer.appendChild(cartItem);
+            });
+
+            const tax = subtotal * 0.15;
+            const total = subtotal + tax;
+            cartItemsContainer.innerHTML += `
+                <hr>
+                <p><strong>Subtotal:</strong> $${subtotal.toFixed(2)}</p>
+                <p><strong>Tax (15%):</strong> $${tax.toFixed(2)}</p>
+                <p><strong>Total:</strong> $${total.toFixed(2)}</p>
+            `;
+        }
+
+        function checkout() {
+    if (cartItems.length === 0) {
+        alert("Your cart is empty. Add items to checkout.");
+        return;
+    }
+
+    // Calculate Subtotal, Tax, and Total
+    let subtotal = 0;
+    cartItems.forEach(item => {
+        subtotal += item.price * item.quantity;
+    });
+    const tax = subtotal * 0.15;
+    const total = subtotal + tax;
+
+    // Store cart data in sessionStorage to pass to invoice page
+    sessionStorage.setItem('cartItems', JSON.stringify(cartItems));
+    sessionStorage.setItem('subtotal', subtotal.toFixed(2));
+    sessionStorage.setItem('tax', tax.toFixed(2));
+    sessionStorage.setItem('total', total.toFixed(2));
+
+    // Redirect to Invoice Page
+    window.location.href = 'invoice.html';
+}
+
+
+        function cancelOrder() {
+            cartItems = [];
+            updateCartDisplay();
+            alert("Order has been canceled.");
+        }
+
+        function exitStore() {
+            alert("Exiting store. Thank you for visiting!");
+			    window.location.href = 'index.html';
+        }
+    </script>
+</body>
+</html>

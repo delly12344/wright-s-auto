@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="errorcss.css">
+    <title>Access Denied</title>
+</head>
+<body>
+    <div class="error-container fade-in">
+        <div class="error-icon">🔒</div>
+        <h1 class="error-title">Access Denied</h1>
+        <p class="error-message">
+            Due to multiple failed login attempts, your access has been temporarily restricted 
+            for security purposes.
+        </p>
+        <div class="countdown" id="countdown">
+            Please wait: <span id="timer">30</span> seconds
+        </div>
+        <div class="button-group">
+            <a href="index.html" class="button primary-button" id="retryButton" style="display: none;">
+                Try Again
+            </a>
+            <a href="mailto:2210185@utech.edu.jm?subject=Website%20Inquiry&body=Hello,%0D%0A%0D%0AI%20would%20like%20to%20inquire%20about..." class="button secondary-button">
+                Contact Support
+            </a>
+        </div>
+        <div class="error-details">
+            Error Code: AUTH_003<br>
+            Time: <span id="timestamp"></span>
+        </div>
+    </div>
+
+    <script>
+        // Set the current timestamp
+        document.getElementById('timestamp').textContent = new Date().toLocaleString();
+
+        // Initialize countdown timer
+        let timeLeft = 30;
+        const timerElement = document.getElementById('timer');
+        const retryButton = document.getElementById('retryButton');
+        
+        const countdownTimer = setInterval(() => {
+            timeLeft--;
+            timerElement.textContent = timeLeft;
+            
+            if (timeLeft <= 0) {
+                clearInterval(countdownTimer);
+                document.querySelector('.countdown').style.display = 'none';
+                retryButton.style.display = 'inline-block';
+            }
+        }, 1000);
+
+        // Clear any stored login attempts when leaving the page
+        window.onbeforeunload = function() {
+            if (timeLeft <= 0) {
+                sessionStorage.removeItem('loginAttempts');
+            }
+        };
+    </script>
+</body>
+</html>

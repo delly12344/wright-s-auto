@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="invoicecss.css">
+    <title>Products Page</title>
+</head>
+<body>
+    <!-- Logo Area -->
+    <div class="logo-container">
+        <center><img src="https://i.imgur.com/rrIBhpn.jpeg" alt="reading picture" height="200" width="180"></center>
+    </div>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="nav-container">
+            <div class="nav-links">
+                <a href="products.html">Products</a>
+                <a href="invoice.html" class="active">Invoice</a>
+                <a href="aboutUS.html">About Us</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="invoice-container">
+        <h1>Invoice</h1>
+        <div id="invoiceItems"></div>
+        <hr>
+        <p><strong>Subtotal:</strong> $<span id="invoiceSubtotal"></span></p>
+        <p><strong>Tax (15%):</strong> $<span id="invoiceTax"></span></p>
+        <p><strong>Total:</strong> $<span id="invoiceTotal"></span></p>
+        <p>Thank you for your purchase!</p>
+
+        <div class="button-container">
+            <button class="btn btn-exit" onclick="exitInvoice()">Exit</button>
+            <button class="btn btn-cancel" onclick="cancelInvoice()">Cancel</button>
+        </div>
+    </div>
+
+    <!-- Inline Script for Invoice Functionality -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const cartItems = JSON.parse(sessionStorage.getItem('cartItems'));
+            const subtotal = sessionStorage.getItem('subtotal');
+            const tax = sessionStorage.getItem('tax');
+            const total = sessionStorage.getItem('total');
+            const invoiceItemsContainer = document.getElementById('invoiceItems');
+            
+            if (cartItems) {
+                cartItems.forEach(item => {
+                    const itemTotal = item.price * item.quantity;
+                    const itemElement = document.createElement('div');
+                    itemElement.classList.add('invoice-item');
+                    itemElement.innerHTML = `
+                        <p>${item.name} (x${item.quantity}): $${itemTotal.toFixed(2)}</p>
+                    `;
+                    invoiceItemsContainer.appendChild(itemElement);
+                });
+                
+                // Displaying subtotal, tax, and total on the Invoice Page
+                document.getElementById('invoiceSubtotal').textContent = subtotal;
+                document.getElementById('invoiceTax').textContent = tax;
+                document.getElementById('invoiceTotal').textContent = total;
+            }
+        });
+
+        function exitInvoice() {
+            // Clear the session storage and redirect to products page
+            sessionStorage.clear();
+            window.location.href = 'index.html';
+        }
+
+        function cancelInvoice() {
+            if (confirm('Are you sure you want to cancel this invoice? This will clear your cart.')) {
+                sessionStorage.clear();
+                window.location.href = 'invoice.html';
+            }
+        }
+    </script>
+</body>
+</html>
